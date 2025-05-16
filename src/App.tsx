@@ -4,6 +4,7 @@ import Header from './components/Header'
 import { GlobalCss } from './styles'
 
 import Rotas from './routes'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <div className='container'>
         <Header />
       </div>
-        <Rotas/>
+      <Rotas/>
+      <Footer/>
     </BrowserRouter>
   )
 }
