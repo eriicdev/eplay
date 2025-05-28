@@ -7,7 +7,7 @@ class Game {
   title: string
   id: number
 
-  constructor (
+  constructor(
     id: number,
     category: string,
     description: string,
@@ -25,6 +25,5 @@ class Game {
     this.title = title
   }
 }
-
 
 export default Game

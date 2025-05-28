@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const Container = styled.footer`
@@ -8,7 +8,7 @@ export const Container = styled.footer`
 `
 
 export const SectionTitle = styled.h4`
-  color:${cores.branca};
+  color: ${cores.branca};
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 16px;
@@ -27,4 +27,3 @@ export const Link = styled.a`
 export const FooterSection = styled.div`
   margin-bottom: 64px;
 `
-

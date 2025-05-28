@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { cores } from "../../styles"
+import styled from 'styled-components'
+import { cores } from '../../styles'
 
 export const HeaderBar = styled.header`
   background-color: ${cores.cinza};
@@ -10,16 +10,16 @@ export const HeaderBar = styled.header`
   align-items: center;
   justify-content: space-between;
 
-    a {
+  a {
     color: ${cores.branca};
     text-decoration: none;
     font-weight: bold;
-    }
+  }
 
-    div {
-      display: flex;
-      align-items: center;
-    }
+  div {
+    display: flex;
+    align-items: center;
+  }
 `
 
 export const Links = styled.ul`
@@ -32,8 +32,7 @@ export const LinksItem = styled.li`
 export const LinkCart = styled.a`
   display: flex;
 
-  img{
+  img {
     margin-left: 16px;
   }
 `
-

@@ -5,10 +5,8 @@ export type Props = {
   children: string
 }
 
-const Tag = ({children, size = 'small'}: Props) => (
-  <TagContainer size={size}>
-    {children}
-  </TagContainer>
+const Tag = ({ children, size = 'small' }: Props) => (
+  <TagContainer size={size}>{children}</TagContainer>
 )
 
 export default Tag

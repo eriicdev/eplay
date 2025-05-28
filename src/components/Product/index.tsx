@@ -1,4 +1,4 @@
-import Tag from "../Tag"
+import Tag from '../Tag'
 
 import { Card, Descricao, Titulo, Infos } from './styles'
 
@@ -20,7 +20,7 @@ const Product = ({
   image
 }: Props) => (
   <Card>
-    <img src={image} alt={title}/>
+    <img src={image} alt={title} />
     <Infos>
       {infos.map((info) => (
         <Tag key={info}>{info}</Tag>

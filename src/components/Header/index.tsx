@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-import { HeaderBar, Links, LinksItem, LinkCart } from "./style";
+import { HeaderBar, Links, LinksItem, LinkCart } from './style'
 
-import logo from "../../assets/images/logo.svg"
-import carrinho from "../../assets/images/carrinho.svg"
+import logo from '../../assets/images/logo.svg'
+import carrinho from '../../assets/images/carrinho.svg'
 
 const Header = () => (
   <HeaderBar>
@@ -14,7 +14,7 @@ const Header = () => (
       <nav>
         <Links>
           <LinksItem>
-          <Link to="/categories">Categorias</Link>
+            <Link to="/categories">Categorias</Link>
           </LinksItem>
           <LinksItem>
             <a href="#">Novidades</a>
@@ -32,5 +32,4 @@ const Header = () => (
   </HeaderBar>
 )
 
-
-export default Header;
+export default Header

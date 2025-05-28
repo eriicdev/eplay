@@ -1,5 +1,5 @@
-import Game from "../../models/Game"
-import Product from "../Product"
+import Game from '../../models/Game'
+import Product from '../Product'
 
 import { Container, List } from './styles'
 
@@ -9,7 +9,7 @@ export type Props = {
   games: Game[]
 }
 
-const ProductList = ({title, background, games}: Props) => (
+const ProductList = ({ title, background, games }: Props) => (
   <Container background={background}>
     <div className="container">
       <h2>{title}</h2>

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const cores = {
   branca: '#eeeeee',
@@ -7,7 +7,6 @@ export const cores = {
   verde: '#10ac84',
   cinzaClaro: '#A3a3a3'
 }
-
 
 export const GlobalCss = createGlobalStyle`
 *{

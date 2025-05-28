@@ -10,11 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalCss />
-      <div className='container'>
+      <div className="container">
         <Header />
       </div>
-      <Rotas/>
-      <Footer/>
+      <Rotas />
+      <Footer />
     </BrowserRouter>
   )
 }
