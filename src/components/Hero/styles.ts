@@ -1,4 +1,3 @@
-import banner from '../../assets/images/fundo-hogwarts.png'
 
 import styled from 'styled-components'
 import { cores } from '../../styles'
@@ -10,7 +9,6 @@ export const Banner = styled.div`
   height: 480px;
   width: 100%;
 
-  background-image: url(${banner});
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;

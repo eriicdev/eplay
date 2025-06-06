@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import { cores } from "../../styles";
+import styled from 'styled-components'
+import { cores } from '../../styles'
 
 export const ItensList = styled.ul`
   display: flex;
-
 `
 
 export const Action = styled.div`
@@ -24,7 +23,8 @@ export const Iten = styled.li`
   margin-right: 16px;
   position: relative;
 
-  > img{  //esse '>' diz ao css que essas regras são exclusivas da img que ta dentro do iten
+  > img {
+    //esse '>' diz ao css que essas regras são exclusivas da img que ta dentro do iten
     border: 2px solid ${cores.branca};
     border-radius: 8px;
     width: 150px;
@@ -55,7 +55,7 @@ export const Modal = styled.div`
     display: flex;
   }
 
-  .overlay{
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -70,15 +70,19 @@ export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
 
-  header{
+  header {
     display: flex;
     margin-bottom: 24px;
     justify-content: space-between;
 
-    h4{
+    h4 {
       font-size: 18px;
       font-weight: bold;
     }
+  }
+
+  > img{
+    width: 100%;
   }
 
   img,
@@ -87,10 +91,9 @@ export const ModalContent = styled.div`
     max-width: 100%;
   }
 
-  iframe{
+  iframe {
     width: 100%;
     height: 480px;
     border: none;
   }
 `
-

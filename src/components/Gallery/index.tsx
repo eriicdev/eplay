@@ -1,4 +1,8 @@
-import Section from "../Section"
+import { useState } from 'react'
+
+import Section from '../Section'
+import { GalleryItem } from '../../pages/Home'
+
 import { Iten, ItensList, Action, Modal, ModalContent } from './styles'
 
 import spiderman from '../../assets/images/banner-homem-aranha.png'
@@ -7,12 +11,6 @@ import hogwarts from '../../assets/images/fundo-hogwarts.png'
 import play from '../../assets/images/play.png'
 import zoom from '../../assets/images/zoom.png'
 import fechar from '../../assets/images/fechar.png'
-import { useState } from "react"
-
-interface GalleryItem {
-  type: 'image' | 'video'
-  url: string
-}
 
 const mock: GalleryItem[] = [
   {
@@ -32,13 +30,14 @@ const mock: GalleryItem[] = [
 type Props = {
   defaultCover: string
   name: string
+  items: GalleryItem[]
 }
 
 interface ModalState extends GalleryItem {
   isVisible: boolean
 }
 
-const Gallery = ({ defaultCover, name }: Props) => {
+const Gallery = ({ defaultCover, name, items }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: 'image',
@@ -50,7 +49,7 @@ const Gallery = ({ defaultCover, name }: Props) => {
     return defaultCover
   }
 
-    const getMediaItem = (item: GalleryItem) => {
+  const getMediaItem = (item: GalleryItem) => {
     if (item.type === 'image') return zoom
     return play
   }
@@ -65,10 +64,10 @@ const Gallery = ({ defaultCover, name }: Props) => {
 
   return (
     <>
-      <Section title='Galeria' background='black'>
+      <Section title="Galeria" background="black">
         <ItensList>
-          {mock.map((media, index) => (
-          <Iten
+          {items.map((media, index) => (
+            <Iten
               key={media.url}
               onClick={() => {
                 setModal({
@@ -77,18 +76,18 @@ const Gallery = ({ defaultCover, name }: Props) => {
                   url: media.url
                 })
               }}
-          >
-            <img
-              src={getMediaCover(media)}
-              alt={`Mídia ${index + 1} de ${name}`}
-            />
-            <Action>
+            >
               <img
-                src={getMediaItem(media)}
-                alt="Clique para maximizar a mídia"
+                src={getMediaCover(media)}
+                alt={`Mídia ${index + 1} de ${name}`}
               />
-            </Action>
-          </Iten>
+              <Action>
+                <img
+                  src={getMediaItem(media)}
+                  alt="Clique para maximizar a mídia"
+                />
+              </Action>
+            </Iten>
           ))}
         </ItensList>
       </Section>
@@ -99,22 +98,23 @@ const Gallery = ({ defaultCover, name }: Props) => {
             <img
               src={fechar}
               alt="Ícone de fechar"
-              onClick={() =>{
+              onClick={() => {
                 closeModal()
               }}
             />
           </header>
           {modal.type === 'image' ? (
-            <img src={modal.url}/>
+            <img src={modal.url} />
           ) : (
             <iframe src={modal.url} />
           )}
         </ModalContent>
-        <div className="overlay"
+        <div
+          className="overlay"
           onClick={() => {
             closeModal()
           }}
-          ></div>
+        ></div>
       </Modal>
     </>
   )
