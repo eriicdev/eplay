@@ -3,6 +3,8 @@ import { cores } from '../../styles'
 
 export const ItensList = styled.ul`
   display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 `
 
 export const Action = styled.div`
@@ -20,7 +22,6 @@ export const Action = styled.div`
 `
 
 export const Iten = styled.li`
-  margin-right: 16px;
   position: relative;
 
   > img {
