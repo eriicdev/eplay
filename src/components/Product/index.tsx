@@ -1,17 +1,17 @@
-import { idText } from 'typescript'
-import Tag from '../Tag'
+import { idText } from "typescript";
+import Tag from "../Tag";
 
-import { Card, Descricao, Titulo, Infos } from './styles'
+import { Card, Descricao, Titulo, Infos } from "./styles";
 
 type Props = {
-  title: string
-  category: string
-  system: string
-  description: string
-  infos: string[]
-  image: string
-  id: number
-}
+  title: string;
+  category: string;
+  system: string;
+  description: string;
+  infos: string[];
+  image: string;
+  id: number;
+};
 
 const Product = ({
   title,
@@ -20,14 +20,14 @@ const Product = ({
   description,
   infos,
   image,
-  id
+  id,
 }: Props) => {
   const getDescricao = (descricao: string) => {
     if (descricao.length > 95) {
-      return descricao.slice(0, 92) + '...'
+      return descricao.slice(0, 92) + "...";
     }
-    return descricao
-  }
+    return descricao;
+  };
 
   return (
     <Card to={`/product/${id}`}>
@@ -42,7 +42,7 @@ const Product = ({
       <Tag>{system}</Tag>
       <Descricao>{getDescricao(description)}</Descricao>
     </Card>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

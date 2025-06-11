@@ -1,41 +1,40 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Game } from '../pages/Home'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Game } from "../pages/Home";
 
-const api = createApi ({
+const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://fake-api-tau.vercel.app/api/eplay'
+    baseUrl: "https://fake-api-tau.vercel.app/api/eplay",
   }),
   endpoints: (builder) => ({
     getFeatureGame: builder.query<Game, void>({
-      query: () => 'destaque'
+      query: () => "destaque",
     }),
     getOnSale: builder.query<Game[], void>({
-      query: () => 'promocoes'
+      query: () => "promocoes",
     }),
     getSoon: builder.query<Game[], void>({
-      query: () => 'em-breve'
+      query: () => "em-breve",
     }),
     getActionGames: builder.query<Game[], void>({
-      query: () => 'acao'
+      query: () => "acao",
     }),
     getSportGames: builder.query<Game[], void>({
-      query: () => 'esportes'
+      query: () => "esportes",
     }),
     getSimulationGames: builder.query<Game[], void>({
-      query: () => 'simulacao'
+      query: () => "simulacao",
     }),
     getFigthGames: builder.query<Game[], void>({
-      query: () => 'luta'
+      query: () => "luta",
     }),
     getRpgGames: builder.query<Game[], void>({
-      query: () => 'rpg'
+      query: () => "rpg",
     }),
     getGame: builder.query<Game, string>({
-      query: (id) => `jogos/${id}`
-    })
-  })
-})
-
+      query: (id) => `jogos/${id}`,
+    }),
+  }),
+});
 
 export const {
   useGetFeatureGameQuery,
@@ -46,7 +45,7 @@ export const {
   useGetSimulationGamesQuery,
   useGetFigthGamesQuery,
   useGetRpgGamesQuery,
-  useGetGameQuery
-} = api
+  useGetGameQuery,
+} = api;
 
-export default api
+export default api;

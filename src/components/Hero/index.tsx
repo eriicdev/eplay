@@ -1,29 +1,29 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
 
-import Tag from '../Tag'
-import { Banner, Infos } from './styles'
+import Tag from "../Tag";
+import { Banner, Infos } from "./styles";
 
-import Button from '../Button'
-import { Game } from '../../pages/Home'
+import Button from "../Button";
+import { Game } from "../../pages/Home";
 
-import { formatPreco } from '../ProductList'
+import { formatPreco } from "../ProductList";
 
-import { add, open } from '../../store/reducers/cart'
+import { add, open } from "../../store/reducers/cart";
 
 type Props = {
-  game: Game
-}
+  game: Game;
+};
 
 const Hero = ({ game }: Props) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const addToCard = () => {
-    dispatch(add(game))
-    dispatch(open())
-  }
+    dispatch(add(game));
+    dispatch(open());
+  };
 
-  return(
-    <Banner style={{ backgroundImage: `url(${game.media.cover})`}}>
+  return (
+    <Banner style={{ backgroundImage: `url(${game.media.cover})` }}>
       <div className="container">
         <div>
           <Tag>{game.details.category}</Tag>
@@ -36,26 +36,22 @@ const Hero = ({ game }: Props) => {
               <span>De {formatPreco(game.prices.old)}</span>
             )}
             <br />
-            {game.prices.current && (
-              <>
-                Por {formatPreco(game.prices.current)}
-              </>
-            )}
+            {game.prices.current && <>Por {formatPreco(game.prices.current)}</>}
           </p>
-            {game.prices.current && (
-              <Button
-                type="button"
-                title="Clique aqui para adicionar este jogo ao carrinho"
-                variant="primary"
-                onClick={addToCard}
-              >
-                Adicionar ao carrinho
-              </Button>
-            )}
+          {game.prices.current && (
+            <Button
+              type="button"
+              title="Clique aqui para adicionar este jogo ao carrinho"
+              variant="primary"
+              onClick={addToCard}
+            >
+              Adicionar ao carrinho
+            </Button>
+          )}
         </Infos>
       </div>
     </Banner>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

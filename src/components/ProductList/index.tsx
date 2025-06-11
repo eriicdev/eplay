@@ -1,40 +1,40 @@
-import { Game } from '../../pages/Home'
+import { Game } from "../../pages/Home";
 
-import Product from '../Product'
+import Product from "../Product";
 
-import { Container, List } from './styles'
+import { Container, List } from "./styles";
 
 export type Props = {
-  title: string
-  background: 'gray' | 'black'
-  games: Game[]
-  id?: string
-}
+  title: string;
+  background: "gray" | "black";
+  games: Game[];
+  id?: string;
+};
 
 export const formatPreco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
-}
-const ProductList = ({ title, background, games, id  }: Props) => {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(preco);
+};
+const ProductList = ({ title, background, games, id }: Props) => {
   const getGamesTags = (game: Game) => {
-    const tags = []
+    const tags = [];
 
     if (game.release_date) {
-      tags.push(game.release_date)
+      tags.push(game.release_date);
     }
 
     if (game.prices.discount) {
-      tags.push(`${game.prices.discount}%`)
+      tags.push(`${game.prices.discount}%`);
     }
 
     if (game.prices.current) {
-      tags.push(formatPreco(game.prices.current))
+      tags.push(formatPreco(game.prices.current));
     }
 
-    return tags
-  }
+    return tags;
+  };
 
   return (
     <Container id={id} background={background}>
@@ -57,7 +57,7 @@ const ProductList = ({ title, background, games, id  }: Props) => {
         </List>
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;

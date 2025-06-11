@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
-import { Game } from '../../pages/Home'
-import Button from '../Button'
-import Tag from '../Tag'
+import { Game } from "../../pages/Home";
+import Button from "../Button";
+import Tag from "../Tag";
 
-import { Imagem, Titulo, Precos } from './styles'
+import { Imagem, Titulo, Precos } from "./styles";
 
-import { useGetFeatureGameQuery } from '../../services/api'
+import { useGetFeatureGameQuery } from "../../services/api";
 
-import { formatPreco } from '../ProductList'
+import { formatPreco } from "../ProductList";
 
 const Banner = () => {
-  const { data: game, isLoading } = useGetFeatureGameQuery()
+  const { data: game, isLoading } = useGetFeatureGameQuery();
 
   if (!game) {
-    return <h3>Carregando...</h3>
+    return <h3>Carregando...</h3>;
   }
 
   return (
@@ -38,6 +38,6 @@ const Banner = () => {
         </Button>
       </div>
     </Imagem>
-  )
-}
-export default Banner
+  );
+};
+export default Banner;

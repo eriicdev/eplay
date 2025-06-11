@@ -1,11 +1,11 @@
-import styled from 'styled-components'
-import { cores } from '../../styles'
+import styled from "styled-components";
+import { cores } from "../../styles";
 
 export const ItensList = styled.ul`
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-`
+`;
 
 export const Action = styled.div`
   position: absolute;
@@ -19,7 +19,7 @@ export const Action = styled.div`
   justify-content: center;
   opacity: 0;
   transition: opacity 0.5s ease;
-`
+`;
 
 export const Iten = styled.li`
   position: relative;
@@ -39,7 +39,7 @@ export const Iten = styled.li`
       transition: opacity 0.5s ease;
     }
   }
-`
+`;
 
 export const Modal = styled.div`
   position: fixed;
@@ -64,7 +64,7 @@ export const Modal = styled.div`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.73);
   }
-`
+`;
 
 export const ModalContent = styled.div`
   max-width: 960px;
@@ -82,7 +82,7 @@ export const ModalContent = styled.div`
     }
   }
 
-  > img{
+  > img {
     width: 100%;
   }
 
@@ -97,4 +97,4 @@ export const ModalContent = styled.div`
     height: 480px;
     border: none;
   }
-`
+`;

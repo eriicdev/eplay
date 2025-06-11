@@ -1,13 +1,13 @@
-import { ButtonContainer, ButtonLink } from './styles'
+import { ButtonContainer, ButtonLink } from "./styles";
 
 export type Props = {
-  type: 'button' | 'link'
-  title: string
-  to?: string
-  onClick?: () => void
-  children: string
-  variant?: 'primary' | 'secondary'
-}
+  type: "button" | "link";
+  title: string;
+  to?: string;
+  onClick?: () => void;
+  children: string;
+  variant?: "primary" | "secondary";
+};
 
 const Button = ({
   type,
@@ -15,9 +15,9 @@ const Button = ({
   to,
   onClick,
   children,
-  variant = 'primary'
+  variant = "primary",
 }: Props) => {
-  if (type === 'button') {
+  if (type === "button") {
     return (
       <ButtonContainer
         variant={variant}
@@ -27,14 +27,14 @@ const Button = ({
       >
         {children}
       </ButtonContainer>
-    )
+    );
   }
 
   return (
     <ButtonLink to={to as string} title={title}>
       {children}
     </ButtonLink>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

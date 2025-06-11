@@ -3,7 +3,7 @@ import { cores } from "../../styles";
 import { TagContainer } from "../Tag/styles";
 import { ButtonContainer } from "../Button/styles";
 
-import fechar from '../../assets/images/fechar.png'
+import fechar from "../../assets/images/fechar.png";
 
 export const Overlay = styled.div`
   position: absolute;
@@ -13,7 +13,7 @@ export const Overlay = styled.div`
   height: 100%;
   background-color: ${cores.preta};
   opacity: 0.7;
-`
+`;
 
 export const CartContainer = styled.div`
   position: fixed;
@@ -28,7 +28,7 @@ export const CartContainer = styled.div`
   &.is-open {
     display: flex;
   }
-`
+`;
 
 export const Sidebar = styled.aside`
   background-color: ${cores.cinza};
@@ -41,7 +41,7 @@ export const Sidebar = styled.aside`
     max-width: 100%;
     width: 100%;
   }
-`
+`;
 
 export const Prices = styled.p`
   font-weight: bold;
@@ -49,12 +49,12 @@ export const Prices = styled.p`
   color: ${cores.branca};
   margin-bottom: 24px;
 
-  span{
+  span {
     display: block;
     font-size: 12px;
     color: ${cores.cinzaClaro};
   }
-`
+`;
 
 export const Quantity = styled.p`
   font-weight: bold;
@@ -62,7 +62,7 @@ export const Quantity = styled.p`
   color: ${cores.branca};
   margin-top: 32px;
   margin-bottom: 16px;
-`
+`;
 
 export const CartItem = styled.li`
   display: flex;
@@ -77,26 +77,24 @@ export const CartItem = styled.li`
     margin-right: 24px;
   }
 
-  h3{
+  h3 {
     font-size: 16px;
     font-weight: bold;
     color: ${cores.branca};
   }
 
-  span{
+  span {
     display: block;
     font-size: 14px;
     font-weight: bold;
     color: ${cores.branca};
   }
 
-
   ${TagContainer} {
     margin-right: 8px;
     margin-top: 8px;
     margin-bottom: 16px;
   }
-
 
   button {
     background-image: url(${fechar});
@@ -109,5 +107,4 @@ export const CartItem = styled.li`
     right: 0;
     cursor: pointer;
   }
-`
-
+`;

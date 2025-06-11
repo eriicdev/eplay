@@ -3,11 +3,11 @@ import {
   FooterSection,
   Link,
   LinksList,
-  SectionTitle
-} from './styles'
+  SectionTitle,
+} from "./styles";
 
 //Ano atual
-const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear();
 
 const Footer = () => (
   <Container>
@@ -16,19 +16,19 @@ const Footer = () => (
         <SectionTitle>Categorias</SectionTitle>
         <LinksList>
           <li>
-            <Link to='/categories#rpg'>RPG</Link>
+            <Link to="/categories#rpg">RPG</Link>
           </li>
           <li>
-            <Link to='/categories#action'>Ação</Link>
+            <Link to="/categories#action">Ação</Link>
           </li>
           <li>
-            <Link to='/categories#sports'>Esportes</Link>
+            <Link to="/categories#sports">Esportes</Link>
           </li>
           <li>
-            <Link to='/categories#simulation'>Simulação</Link>
+            <Link to="/categories#simulation">Simulação</Link>
           </li>
           <li>
-            <Link to='/categories#fight'>Luta</Link>
+            <Link to="/categories#fight">Luta</Link>
           </li>
         </LinksList>
       </FooterSection>
@@ -36,16 +36,16 @@ const Footer = () => (
         <SectionTitle>Acesso rápido</SectionTitle>
         <LinksList>
           <li>
-            <Link to='/#on-sale'>Promoções</Link>
+            <Link to="/#on-sale">Promoções</Link>
           </li>
           <li>
-            <Link to='/#coming-soon'>Em breve</Link>
+            <Link to="/#coming-soon">Em breve</Link>
           </li>
         </LinksList>
       </FooterSection>
       <p>{currentYear} - &copy; E-PLAY Todos os direitos reservados</p>
     </div>
   </Container>
-)
+);
 
-export default Footer
+export default Footer;
