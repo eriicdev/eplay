@@ -21,8 +21,7 @@ const cartSlice = createSlice({
       if (!game) {
         //caso o game ainda nao esteja no carrinho ele pode adicionar
         state.items.push(action.payload);
-      } else
-        alert("Jogo já adicionado ao carrinho de compras."); //caso ja esteja aparecerá esse aviso nma tela
+      } else alert("Jogo já adicionado ao carrinho de compras."); //caso ja esteja aparecerá esse aviso nma tela
     },
     remove: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
