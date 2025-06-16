@@ -1,5 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
+
 import Button from "../Button";
+import Tag from "../Tag";
+
+import { formatPreco } from "../ProductList";
+import { RootReducer } from "../../store";
+import { close, remove } from "../../store/reducers/cart";
+
 import {
   Overlay,
   CartContainer,
@@ -8,13 +15,6 @@ import {
   Quantity,
   CartItem,
 } from "./styles";
-
-import starWars from "../../assets/images/star_wars.png";
-import Tag from "../Tag";
-import { RootReducer } from "../../store";
-
-import { close, remove } from "../../store/reducers/cart";
-import { formatPreco } from "../ProductList";
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart);

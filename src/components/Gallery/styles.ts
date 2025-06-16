@@ -23,6 +23,7 @@ export const Action = styled.div`
 
 export const Iten = styled.li`
   position: relative;
+  cursor: zoom-in;
 
   > img {
     //esse '>' diz ao css que essas regras são exclusivas da img que ta dentro do iten
