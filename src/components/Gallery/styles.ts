@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { colors } from "../../styles";
 
 export const ItensList = styled.ul`
   display: flex;
@@ -27,7 +27,7 @@ export const Iten = styled.li`
 
   > img {
     //esse '>' diz ao css que essas regras são exclusivas da img que ta dentro do iten
-    border: 2px solid ${cores.branca};
+    border: 2px solid ${colors.white};
     border-radius: 8px;
     width: 150px;
     height: 150px;
@@ -53,7 +53,7 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
 
-  &.visivel {
+  &.is-visible {
     display: flex;
   }
 
