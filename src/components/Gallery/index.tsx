@@ -77,10 +77,7 @@ const Gallery = ({ defaultCover, name, items }: Props) => {
         <S.ModalContent className="container">
           <header>
             <h4>{name}</h4>
-            <img
-              src={closeIcon}
-              alt="Ícone de fechar"
-              onClick={closeModal} />
+            <img src={closeIcon} alt="Ícone de fechar" onClick={closeModal} />
           </header>
           {modal.type === "image" ? (
             <img src={modal.url} />

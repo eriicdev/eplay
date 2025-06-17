@@ -13,7 +13,7 @@ import * as S from "./styles";
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -21,15 +21,14 @@ const Cart = () => {
     dispatch(close());
   };
 
-
   const removeItem = (id: number) => {
     dispatch(remove(id));
   };
 
   const goToCheckout = () => {
-    navigate('/checkout')
-    closeCart()
-  }
+    navigate("/checkout");
+    closeCart();
+  };
 
   return (
     <S.CartContainer className={isOpen ? "is-open" : ""}>

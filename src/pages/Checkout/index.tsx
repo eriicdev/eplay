@@ -16,21 +16,19 @@ import * as S from "./styles";
 import { RootReducer } from "../../store";
 import { getTotalPrice, parseToBrl } from "../../utils";
 
-
 type installment = {
-  quantity: number
-  amount: number
-  formattedAmount: string
-}
-
+  quantity: number;
+  amount: number;
+  formattedAmount: string;
+};
 
 const Checkout = () => {
   const [payWithCard, setPayWithCard] = useState(false);
   const [purchase, { data, isSuccess }] = usePurchaseMutation();
   const { items } = useSelector((state: RootReducer) => state.cart);
-  const [installments, setInstallments] = useState<installment[]>([])
+  const [installments, setInstallments] = useState<installment[]>([]);
 
-  const totalPrice = getTotalPrice(items)
+  const totalPrice = getTotalPrice(items);
 
   const form = useFormik({
     initialValues: {
@@ -133,32 +131,32 @@ const Checkout = () => {
   const checkInputHasError = (fieldName: string) => {
     const isTouched = fieldName in form.touched;
     const isInvalid = fieldName in form.errors;
-    const hasError = isTouched && isInvalid
+    const hasError = isTouched && isInvalid;
 
-    return hasError
+    return hasError;
   };
 
   useEffect(() => {
-  const calculateInstallments = () => {
-    const installmentsArray: installment[] = []
-    for (let i = 1; i <= 6; i++) {
-      installmentsArray.push({
-        quantity: i,
-        amount: totalPrice / i,
-        formattedAmount: parseToBrl(totalPrice / i)
-      })
-    }
+    const calculateInstallments = () => {
+      const installmentsArray: installment[] = [];
+      for (let i = 1; i <= 6; i++) {
+        installmentsArray.push({
+          quantity: i,
+          amount: totalPrice / i,
+          formattedAmount: parseToBrl(totalPrice / i),
+        });
+      }
 
-    return installmentsArray
-  }
+      return installmentsArray;
+    };
 
     if (totalPrice > 0) {
-      setInstallments(calculateInstallments())
+      setInstallments(calculateInstallments());
     }
-  }, [totalPrice])
+  }, [totalPrice]);
 
   if (items.length === 0) {
-    return <Navigate to="/"/>
+    return <Navigate to="/" />;
   }
 
   return (
@@ -212,7 +210,7 @@ const Checkout = () => {
                     value={form.values.fullname}
                     onChange={form.handleChange}
                     onBlur={form.handleBlur}
-                    className={checkInputHasError('fullname') ? 'error' : ''}
+                    className={checkInputHasError("fullname") ? "error" : ""}
                   />
                 </S.InputGroup>
                 <S.InputGroup>
@@ -224,7 +222,7 @@ const Checkout = () => {
                     value={form.values.email}
                     onChange={form.handleChange}
                     onBlur={form.handleBlur}
-                    className={checkInputHasError('email') ? 'error' : ''}
+                    className={checkInputHasError("email") ? "error" : ""}
                   />
                 </S.InputGroup>
                 <S.InputGroup>
@@ -236,7 +234,7 @@ const Checkout = () => {
                     value={form.values.cpf}
                     onChange={form.handleChange}
                     onBlur={form.handleBlur}
-                    className={checkInputHasError('cpf') ? 'error' : ''}
+                    className={checkInputHasError("cpf") ? "error" : ""}
                   />
                 </S.InputGroup>
               </S.Row>
@@ -253,7 +251,9 @@ const Checkout = () => {
                     value={form.values.deliveryEmail}
                     onChange={form.handleChange}
                     onBlur={form.handleBlur}
-                    className={checkInputHasError('deliveryEmail') ? 'error' : ''}
+                    className={
+                      checkInputHasError("deliveryEmail") ? "error" : ""
+                    }
                   />
                 </S.InputGroup>
                 <S.InputGroup>
@@ -267,7 +267,9 @@ const Checkout = () => {
                     value={form.values.confirmDeliveryEmail}
                     onChange={form.handleChange}
                     onBlur={form.handleBlur}
-                    className={checkInputHasError('confirmDeliveryEmail') ? 'error' : ''}
+                    className={
+                      checkInputHasError("confirmDeliveryEmail") ? "error" : ""
+                    }
                   />
                 </S.InputGroup>
               </S.Row>
@@ -307,7 +309,9 @@ const Checkout = () => {
                           value={form.values.cardOwner}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('cardOwner') ? 'error' : ''}
+                          className={
+                            checkInputHasError("cardOwner") ? "error" : ""
+                          }
                         />
                       </S.InputGroup>
                       <S.InputGroup>
@@ -321,7 +325,9 @@ const Checkout = () => {
                           value={form.values.cpfCardOwner}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('cpfCardOwner') ? 'error' : ''}
+                          className={
+                            checkInputHasError("cpfCardOwner") ? "error" : ""
+                          }
                         />
                       </S.InputGroup>
                     </S.Row>
@@ -335,7 +341,9 @@ const Checkout = () => {
                           value={form.values.cardDisplayName}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('cardDisplayName') ? 'error' : ''}
+                          className={
+                            checkInputHasError("cardDisplayName") ? "error" : ""
+                          }
                         />
                       </S.InputGroup>
                       <S.InputGroup>
@@ -347,7 +355,9 @@ const Checkout = () => {
                           value={form.values.cardNumber}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('cardNumber') ? 'error' : ''}
+                          className={
+                            checkInputHasError("cardNumber") ? "error" : ""
+                          }
                         />
                       </S.InputGroup>
                       <S.InputGroup maxWidth="123px">
@@ -359,7 +369,9 @@ const Checkout = () => {
                           value={form.values.expiresMonth}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('expiresMonth') ? 'error' : ''}
+                          className={
+                            checkInputHasError("expiresMonth") ? "error" : ""
+                          }
                         />
                       </S.InputGroup>
                       <S.InputGroup maxWidth="123px">
@@ -371,7 +383,9 @@ const Checkout = () => {
                           value={form.values.expiresYear}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('expiresYear') ? 'error' : ''}
+                          className={
+                            checkInputHasError("expiresYear") ? "error" : ""
+                          }
                         />
                       </S.InputGroup>
                       <S.InputGroup maxWidth="48px">
@@ -383,7 +397,9 @@ const Checkout = () => {
                           value={form.values.cardCode}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('cardCode') ? 'error' : ''}
+                          className={
+                            checkInputHasError("cardCode") ? "error" : ""
+                          }
                         />
                       </S.InputGroup>
                     </S.Row>
@@ -396,12 +412,13 @@ const Checkout = () => {
                           value={form.values.installments}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
-                          className={checkInputHasError('installments') ? 'error' : ''}
+                          className={
+                            checkInputHasError("installments") ? "error" : ""
+                          }
                         >
-                          {installments.map(installment => (
+                          {installments.map((installment) => (
                             <option key={installment.quantity}>
-                              {installment.quantity}
-                              X de
+                              {installment.quantity}X de
                               {installment.formattedAmount}
                             </option>
                           ))}

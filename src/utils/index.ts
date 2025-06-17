@@ -7,12 +7,11 @@ export const parseToBrl = (amount = 0) => {
   }).format(amount);
 };
 
-
 export const getTotalPrice = (items: Game[]) => {
   return items.reduce((accumulator, currentItem) => {
     if (currentItem.prices.current) {
       return (accumulator += currentItem.prices.current);
     }
-    return 0
+    return 0;
   }, 0);
 };
