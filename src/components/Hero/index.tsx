@@ -4,7 +4,6 @@ import Tag from "../Tag";
 import * as S from "./styles";
 
 import Button from "../Button";
-import { Game } from "../../pages/Home";
 
 import { add, open } from "../../store/reducers/cart";
 import { parseToBrl } from "../../utils";
